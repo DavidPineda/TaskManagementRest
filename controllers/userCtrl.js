@@ -25,10 +25,10 @@ exports.login = function(req, res){
             if(user.authenticate(req.body._password))
                 res.status(200).send({token: service.createToken(user), success: true});
             else
-                res.send(403, {message: "Password de usuario incorrecto", success: false});    
+                res.status(200).send({message: "Password de usuario incorrecto", success: false});    
         }                        
         else{
-            res.send(403, {message: "El usuario no se encontro en la DB", success: false});
+            res.status(200).send({message: "El usuario no se encontro en la DB", success: false});
         }            
     });
 };
