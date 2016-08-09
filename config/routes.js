@@ -12,6 +12,6 @@ module.exports = function(app) {
 
     // Test
     app.get("/api/user", service.ensureAuthenticated, function(req, res) {
-        res.status(200).send("Muy Bien");
+        res.status(200).send({message: "Muy Bien"});
     });  
 } 
